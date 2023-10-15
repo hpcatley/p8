@@ -76,14 +76,14 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  int index = 0;
+  int index = -1;
   for(int i=0; i<values.size(); i++) {
     if(values[i] == value) {
-      index = 1;
+      index = i;
       break;
     }
   }
-  if(index == 0) {
+  if(index == -1) {
     return;
   }
   values[index] = values.back();
